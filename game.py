@@ -129,34 +129,12 @@ def rps():
     rps = input("\n선공을 잡기 위한 가위바위보 게임을 시작합니다. 가위/바위/보 중 하나를 입력하시오: ")
     monster_rps = random.choice(["가위", "바위", "보"])
     while True:
-        if rps == "가위" and monster_rps == "보":
+        if (rps == "가위" and monster_rps == "보") or (rps == "바위" and monster_rps == "가위") or (rps == "보" and monster_rps == "바위"):
             print(f"{player_name}: {rps}, {monster_name}: {monster_rps}")
             print(f"{player_name}님이 이겼습니다. 공격을 시작하세요\n")
             battle(player, monster)
             break
-        elif rps == "가위" and monster_rps == "바위":
-            print(f"{player_name}: {rps}, {monster_name}: {monster_rps}")
-            print(f"{monster_name}가 이겼습니다. 공격이 시작됩니다\n")
-            time.sleep(1.5)
-            battle(monster, player)
-            break
-        elif rps == "바위" and monster_rps == "가위":
-            print(f"{player_name}: {rps}, {monster_name}: {monster_rps}")
-            print(f"{player_name}님이 이겼습니다. 공격을 시작하세요\n")
-            battle(player, monster)
-            break
-        elif rps == "바위" and monster_rps == "보":
-            print(f"{player_name}: {rps}, {monster_name}: {monster_rps}")
-            print(f"{monster_name}가 이겼습니다. 공격이 시작됩니다\n")
-            time.sleep(1.5)
-            battle(monster, player)
-            break
-        elif rps == "보" and monster_rps == "바위":
-            print(f"{player_name}: {rps}, {monster_name}: {monster_rps}")
-            print(f"{player_name}님이 이겼습니다. 공격을 시작하세요\n")
-            battle(player, monster)
-            break
-        elif rps == "보" and monster_rps == "가위":
+        elif (rps == "가위" and monster_rps == "바위") or (rps == "바위" and monster_rps == "보") or (rps == "보" and monster_rps == "가위"):
             print(f"{player_name}: {rps}, {monster_name}: {monster_rps}")
             print(f"{monster_name}가 이겼습니다. 공격이 시작됩니다\n")
             time.sleep(1.5)
