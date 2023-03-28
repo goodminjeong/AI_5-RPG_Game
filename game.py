@@ -50,6 +50,7 @@ class Character:
 
 
 class Monster:
+    # 몬스터의 모체가 되는 클래스
     def __init__(self, name, hp, power):
         self.name = name
         self.hp = hp
@@ -72,8 +73,6 @@ class Monster:
             f"{self.name}의 상태\nHP {self.hp}/{self.max_hp}")
 
 # 전투 진행 함수
-
-
 def battle(self, other):
     while True:
         if self == player:
@@ -123,8 +122,6 @@ def battle(self, other):
                     continue
 
 # 선공을 위한 가위바위보 게임 함수
-
-
 def rps():
     rps = input("\n선공을 잡기 위한 가위바위보 게임을 시작합니다. 가위/바위/보 중 하나를 입력하시오: ")
     monster_rps = random.choice(["가위", "바위", "보"])
